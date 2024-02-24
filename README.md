@@ -1,1 +1,1 @@
-# Bugs-Bunnys_College-Event-Management-System_Agnethon
+# Bugs-Bunnys_JALSUCHNA_Agnethon
