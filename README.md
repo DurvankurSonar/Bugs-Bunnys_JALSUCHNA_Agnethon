@@ -14,9 +14,9 @@ JALSUCHNA ( AUTOMATED WATER SUPPLY SYSTEM )
 2. Navigate to the project directory:
 
 
-3. Import the database schema from `database.sql` to your MySQL database.
+3. Import the database schema from `cpp_form.sql` to your MySQL database.
 
-4. Configure the database connection in the `join.php` file.
+4. Configure the database connection in the `home.php` file.
 
 5. Start a local server:
 
