@@ -1,4 +1,6 @@
-JALSUCHNA ( AUTOMATED WATER SUPPLY SYSTEM )
+## Introduction
+
+**JALSUCHNA ( AUTOMATED WATER SUPPLY SYSTEM )**
 
              Jalsuchna is an innovative water management project tailored for the citizens of Jalgaon. This platform offers real-time updates on the water situation in the city, providing residents with the latest information regarding water availability, quality, and usage.
            
