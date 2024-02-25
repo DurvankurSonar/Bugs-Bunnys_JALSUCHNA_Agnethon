@@ -17,44 +17,7 @@ Author URL: http://w3layouts.com
   <!-- Template CSS -->
   <link rel="stylesheet" href="assets/css/style-starter.css">
 </head>
-<style>
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    z-index: 999;
-  }
 
-  .popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #f4d806; 
-    padding: 20px;
-    border-radius: 10px; 
-    box-shadow: 0 0 20px rgba(247, 4, 4, 0.2);
-    z-index: 1000;
-    width: 80%;
-    max-width: 800px; 
-    text-align: center;
-    color: orange; 
-  }
-
-  .popup button {
-    background-color: blue;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-
-</style>
 <body>
   <!--header-->
 
@@ -72,10 +35,54 @@ Author URL: http://w3layouts.com
 	
 	
   ?>
+  <style>
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 999;
+  }
+
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white; 
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0 0 20px rgba(247, 4, 4, 0.2);
+    z-index: 1000;
+    width: 80%;
+    max-width: 800px; 
+    text-align: center;
+    color: orange; 
+  }
+
+  .popup button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .alert {
+  color: #ffd900;
+  font-family: Arial, sans-serif; 
+  font-size: 20px;
+  font-weight: bold;
+}
+</style>
 <div class="overlay" id="overlay"></div>
 <div class="popup" id="popup">
-  <h2>Important News</h2>
-  <p><?php echo $row['Blog']; ?></p>
+  <h4 class="alert">Important News</h4>
+  <h2 class="news"><?php echo $row['Blog']; ?></h2>
   <button onclick="closePopup()">Close</button>
 </div>
 
@@ -505,7 +512,16 @@ Author URL: http://w3layouts.com
               </ul>
             </div>
 			
-		
+			
+            <div class="col-lg-3 col-md-5 column pr-md-0">
+            <p style="font-size:22px;font-family:'Courier New'; ">Developed By :<br> 
+						
+						 
+						<b>Durvankur G.   Sonar</b><br>
+						
+             
+              
+            </div>
 			
 			
 			
@@ -589,16 +605,15 @@ Author URL: http://w3layouts.com
       })
     })
   </script>
-  <!-- //script for testimonials -->
+ 
 
   <script src="assets/js/theme-change.js"></script>
 
-  <!-- js for portfolio lightbox -->
-  <!-- libhtbox -->
+
   <script src="assets/js/lightbox-plus-jquery.min.js"></script>
-  <!-- libhtbox -->
+  
   <script src="assets/js/owl.carousel.js"></script>
-  <!-- script for banner slider-->
+ 
   <script>
     $(document).ready(function () {
       $('.owl-one').owlCarousel({
@@ -631,7 +646,7 @@ Author URL: http://w3layouts.com
       })
     })
   </script>
-  <!-- //script -->
+  
   <script>
     $(document).ready(function () {
       $('.owl-news').owlCarousel({
@@ -668,14 +683,13 @@ Author URL: http://w3layouts.com
       })
     })
   </script>
-  <!-- stats number counter-->
+
   <script src="assets/js/jquery.waypoints.min.js"></script>
   <script src="assets/js/jquery.countup.js"></script>
   <script>
     $('.counter').countUp();
   </script>
-  <!-- //stats number counter -->
-  <!--/MENU-JS-->
+ 
   <script>
     $(window).on("scroll", function () {
       var scroll = $(window).scrollTop();
@@ -687,7 +701,7 @@ Author URL: http://w3layouts.com
       }
     });
 
-    //Main navigation Active Class Add Remove
+  
     $(".navbar-toggler").on("click", function () {
       $("header").toggleClass("active");
     });
