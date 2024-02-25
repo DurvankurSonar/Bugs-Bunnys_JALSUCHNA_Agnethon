@@ -17,9 +17,92 @@ Author URL: http://w3layouts.com
   <!-- Template CSS -->
   <link rel="stylesheet" href="assets/css/style-starter.css">
 </head>
+<style>
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 999;
+  }
 
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f4d806; 
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0 0 20px rgba(247, 4, 4, 0.2);
+    z-index: 1000;
+    width: 80%;
+    max-width: 800px; 
+    text-align: center;
+    color: orange; 
+  }
+
+  .popup button {
+    background-color: blue;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+</style>
 <body>
   <!--header-->
+
+  <!-- Pop-up window -->
+  <?php
+	$conn=mysqli_connect("localhost","root","","cpp_form");
+	
+	
+	
+	$q="select Blog from news_admin order by NewsID desc limit 1";
+	
+	$res=mysqli_query($conn,$q);
+	
+	$row = mysqli_fetch_array($res);
+	
+	
+  ?>
+<div class="overlay" id="overlay"></div>
+<div class="popup" id="popup">
+  <h2>Important News</h2>
+  <p><?php echo $row['Blog']; ?></p>
+  <button onclick="closePopup()">Close</button>
+</div>
+
+<!-- JavaScript to show the pop-up window automatically -->
+<script>
+  // Function to show the pop-up window
+  function showPopup() {
+    var overlay = document.getElementById('overlay');
+    var popup = document.getElementById('popup');
+    overlay.style.display = 'block';
+    popup.style.display = 'block';
+  }
+
+  // Function to close the pop-up window
+  function closePopup() {
+    var overlay = document.getElementById('overlay');
+    var popup = document.getElementById('popup');
+    overlay.style.display = 'none';
+    popup.style.display = 'none';
+  }
+
+  // Show the pop-up window when the page loads
+  window.onload = function() {
+    showPopup();
+  };
+</script>
+
   <section class="w3l-header">
     <header id="site-header" class="fixed-top">
       <div class="container">
@@ -156,8 +239,6 @@ Author URL: http://w3layouts.com
  
  
   <!--/features-->
-  
-  
   
 
   
@@ -303,37 +384,12 @@ Author URL: http://w3layouts.com
    <!--//grids-->
   
   <!--//features-->
-  <?php
-	$conn=mysqli_connect("localhost","root","","cpp_form");
-	
-	
-	
-	$q="select Blog from news_admin order by NewsID desc limit 1";
-	
-	$res=mysqli_query($conn,$q);
-	
-	$row = mysqli_fetch_array($res);
-	
-	
-  ?>
+
   
   
   
   
- <center> 
-  <!-- middle -->
- <div class="w3l-middle py-0">
-  <div class="container py-xl-5 py-lg-3">
-    <div class="welcome-left py-md-5 py-1">
-      
-      <h4 style="color:orange;">Important News</h4>
-      <h2 style="color:white;margin-left:50px;"><?php echo $row['Blog']; ?> </h2>
-      
-    </div>
-  </div>
-</div> 
-<!--middle -->
-</center>
+
 
   <!--/w3l-cwp4-->
   
@@ -449,16 +505,7 @@ Author URL: http://w3layouts.com
               </ul>
             </div>
 			
-			
-            <div class="col-lg-3 col-md-5 column pr-md-0">
-            <p style="font-size:22px;font-family:'Courier New'; ">Developed By :<br> 
-						
-						 
-						<b>Durvankur G.   Sonar</b><br>
-						
-             
-              
-            </div>
+		
 			
 			
 			
